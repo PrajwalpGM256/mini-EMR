@@ -24,4 +24,4 @@ export const DOSAGES = [
 
 export const REPEAT_OPTIONS = ['none', 'weekly', 'monthly']
 
-export const REFILL_SCHEDULES = ['monthly']
+export const REFILL_SCHEDULES = ['none', 'monthly']
