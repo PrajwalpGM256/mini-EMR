@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Eye, EyeOff, LogIn } from 'lucide-react'
 import { Input } from '@/components/ui/input'
@@ -14,7 +13,6 @@ const DEMO_ACCOUNTS = [
 ]
 
 export function LoginForm() {
-  const router = useRouter()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
@@ -38,11 +36,13 @@ export function LoginForm() {
         throw new Error(json.error || 'Login failed')
       }
 
-      localStorage.setItem('token', json.token)
-      router.push('/dashboard')
+      // FIX: API returns { data: { token, patient } }
+      localStorage.setItem('token', json.data.token)
+      
+      // Hard navigation to ensure layout sees the token
+      window.location.href = '/dashboard'
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Login failed')
-    } finally {
       setLoading(false)
     }
   }
