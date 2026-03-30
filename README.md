@@ -89,6 +89,27 @@ src/
 - **Appointments:** Future dates only, end date must be after start
 - **Prescriptions:** Refill date cannot be in past
 
+## Future Improvements
+
+### Features
+- **Admin Authentication** — Role-based access with admin login
+- **Appointment Notifications** — Email/SMS reminders for upcoming appointments
+- **Prescription Refill Requests** — Patients can request refills through the portal
+- **Patient Profile Editing** — Allow patients to update contact info
+- **Audit Logging** — Track all CRUD operations for compliance
+
+### Code Quality
+- **Shared Types** — Extract duplicated interfaces to `src/types/index.ts`
+- **Date Utilities** — Consolidate `isSameDay`, `getDaysUntil`, `getUpcomingDates` into `src/lib/date-utils.ts`
+- **API Helpers** — Create `successResponse`, `errorResponse`, `unauthorizedResponse` utilities to reduce boilerplate
+- **Custom Hooks** — Extract fetch logic into `usePatientApi` hook for consistent data fetching
+- **Error Boundaries** — Add React error boundaries for graceful failure handling
+- **Testing** — Unit tests for validation logic, integration tests for API endpoints
+
+### Performance
+- **React Query / SWR** — Replace manual fetch with caching and background refetching
+- **Optimistic Updates** — Immediate UI feedback on mutations
+- **Pagination** — Paginate patient list and appointment/prescription tables for scale
 ---
 
 Built by [Prajwal Gangadhar Melinamane](https://prajwalgm.tech)
