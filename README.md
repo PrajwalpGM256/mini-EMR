@@ -3,7 +3,7 @@
 Electronic Medical Records system with admin and patient portals.
 
 **Live:** https://zealthy-emr-rust.vercel.app  
-**Stack:** Next.js 16, TypeScript, Prisma 6, PostgreSQL (Neon), Tailwind CSS, Framer Motion
+**Stack:** Next.js 16, TypeScript, Prisma 6, PostgreSQL (Neon), Tailwind CSS, Framer Motion and Magic UI components
 
 ## Demo Credentials
 
